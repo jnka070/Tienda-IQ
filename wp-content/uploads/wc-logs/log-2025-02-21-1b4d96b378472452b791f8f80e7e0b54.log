@@ -1,0 +1,8 @@
+2025-02-21T00:12:41+00:00 INFO Payment gateway enabled: ""
+2025-02-21T13:11:13+00:00 INFO Sincronización de directorios de descarga aprobados: nueva exploración programada.
+2025-02-21T13:11:14+00:00 INFO Sincronización de directorios de descarga aprobados: exploración completada.
+2025-02-21T14:09:29+00:00 INFO Payment gateway enabled: ""
+2025-02-21T17:59:42+00:00 DEBUG Se ha procesado un pago CONTEXT: {"code":"201","msg_banco":"Pago Aprobado","voucher":"","id_pago":"d8edfc1d-e781-4db2-b4d0-319a3a547c8e","reference":"319484","sequence":"319484","approval":"319484","lote":"319484"}
+2025-02-21T18:34:45+00:00 DEBUG Se ha procesado un pago CONTEXT: {"code":"201","msg_banco":"Pago Aprobado","voucher":"","id_pago":"f57c2108-0b57-4846-8783-04592e34937c","reference":"32285","sequence":"32285","approval":"32285","lote":"32285"}
+2025-02-21T19:10:00+00:00 DEBUG Se ha procesado un pago CONTEXT: {"code":"201","msg_banco":"Pago Aprobado","voucher":"","id_pago":"b9800af0-6a6c-49ca-b946-0d211191df68","reference":"874959","sequence":"874959","approval":"874959","lote":"874959"}
+2025-02-21T19:11:51+00:00 DEBUG Se ha procesado un pago CONTEXT: {"code":"201","msg_banco":"Pago Aprobado","voucher":"","id_pago":"a0c7196f-f13d-4f2f-abe9-d9e7a46edb66","reference":"586485","sequence":"586485","approval":"586485","lote":"586485"}
