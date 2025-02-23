@@ -58,3 +58,15 @@
     [lote] => 586485
 )
 
+2025-02-21T21:24:24+00:00 DEBUG Array
+(
+    [code] => 201
+    [msg_banco] => Pago Aprobado
+    [voucher] => 
+    [id_pago] => 45af31f3-8ba6-4118-a9fb-2f082e3b1e82
+    [reference] => 644432
+    [sequence] => 644432
+    [approval] => 644432
+    [lote] => 644432
+)
+

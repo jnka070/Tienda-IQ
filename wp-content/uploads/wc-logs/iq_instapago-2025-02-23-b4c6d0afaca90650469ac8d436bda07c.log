@@ -1,0 +1,12 @@
+2025-02-23T00:17:16+00:00 DEBUG Array
+(
+    [code] => 201
+    [msg_banco] => Pago Aprobado
+    [voucher] => 
+    [id_pago] => b8bc53ca-c142-41b0-88ed-4c78a786c9ec
+    [reference] => 513488
+    [sequence] => 513488
+    [approval] => 513488
+    [lote] => 513488
+)
+
