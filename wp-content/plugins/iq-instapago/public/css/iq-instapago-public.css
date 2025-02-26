@@ -1,0 +1,68 @@
+.iq-instapago-form--container {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.iq-instapago-form--input {
+    width: 100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.iq-instapago-form--select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.iq-instapago-form--tipe {
+    width: 20%;
+}
+.iq-instapago-form--cchnameid {
+    width: 78%;
+}
+.iq-instapago-form--tdc-number {
+    width: 59%;
+}
+.iq-instapago-form--ccv {
+    width: 39%;
+}
+.iq-instapago-form--exp-month {
+    width: 48%;
+}
+.iq-instapago-form--exp-year {
+    width: 50%;
+}
+.iq-instapago-form--txt-help {
+    font-size: 14px;
+    color: #555;
+}
+.iq-instapago-img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.iq-instapago-text-center {
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .iq-instapago-form--container {
+        max-width: 100%;
+    }
+    .iq-instapago-form--input,
+    .iq-instapago-form--select {
+        width: 100%;
+    }
+}
+
+.iq-instapago-icon {
+    width: 5px !important;
+    height: 5px !important;
+    margin-right: 10px !important;
+}
