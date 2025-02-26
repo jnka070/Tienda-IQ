@@ -63,6 +63,7 @@
 		<p class="iq-instapago-form--txt-help">
 			<?php _e(__('Está transacción sera procesada de forma segura gracias a la plataforma de', 'iq-instapago')); ?>
 		</p>
+		<p><?php _e(__('Powered By')); ?> <a href="https://iqtsystems.com/" target="_blank"><?php _e(__('IQ Tecnhology Systems')) ?></a></p>
 		<img src="<?php echo plugins_url('iq-instapago/public/img/iq-instapago.png'); ?>" class="iq-instapago-img" alt="Instapago Banesco">
 	</div>
 </div>

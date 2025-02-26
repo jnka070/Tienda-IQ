@@ -14,7 +14,6 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 	private string $publicKeyId;
 	public string $debug;
 	public string $paymod;
-
 	private function load_dependencies()
 	{
 
@@ -28,7 +27,6 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 	{
 		global $woocommerce;
 		$this->id = 'iq-instapago';
-		$this->powerby = __('IQ Tecnhology Systems', 'iq-instapago');
 		$this->order_button_text = __('Pagar con Insta Web', 'iq-instapago');
 		$this->medthod_title = __('Insta Web', 'iq-instapago');
 		$this->method_description = sprintf(__('Nuestra plataforma te permite validar pagos vía Zelle, con la seguridad que deseas al recibir pagos a través de este canal. Al vincular la plataforma al correo de tu cuenta bancaria, r ecibirás correos de confirmación que se actualizarán automáticamente en nuestra plataforma de manera rápida y confiable.', 'iq-instapago'));
