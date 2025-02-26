@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Configuración de IQ Instapago.
+ * Configuración de Insta Web.
  *
  * @category Admin
  *
@@ -13,20 +13,20 @@ if (!defined('ABSPATH')) {
 }
 
 /*
- * Settings for IQ Instapago Gateway.
+ * Settings for Insta Web Gateway.
  */
 return [
 	'enabled' => [
 		'title'   => __('Enable/Disable', 'iq-instapago'),
 		'type'    => 'checkbox',
-		'label'   => __('Habilitar IQ Instapago', 'iq-instapago'),
+		'label'   => __('Habilitar Insta Web', 'iq-instapago'),
 		'default' => 'no',
 	],
 	'title' => [
 		'title'       => __('Título', 'iq-instapago'),
 		'type'        => 'text',
 		'description' => __('Esto controla el título que el usuario ve durante la compra.', 'iq-instapago'),
-		'default'     => __('IQ Instapago', 'iq-instapago'),
+		'default'     => __('Insta Web', 'iq-instapago'),
 		'desc_tip'    => true,
 	],
 	'description' => [
@@ -67,6 +67,6 @@ return [
 		'type'        => 'checkbox',
 		'label'       => __('Enable logging', 'iq-instapago'),
 		'default'     => 'yes',
-		'description' => sprintf(__('Save IQ Instapago events inside <code>%s</code>', 'iq-instapago'), wc_get_log_file_path('iq-instapago')),
+		'description' => sprintf(__('Save Insta Web events inside <code>%s</code>', 'iq-instapago'), wc_get_log_file_path('iq-instapago')),
 	],
 ];

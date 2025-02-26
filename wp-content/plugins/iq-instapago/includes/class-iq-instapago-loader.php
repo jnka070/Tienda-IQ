@@ -36,6 +36,10 @@ class IQ_Instapago_Loader
     }
 
     /**
+     * The array of shortcodes registered with WordPress.
+     */
+    protected $shortcodes;
+    /**
      * Add a new action to the collection to be registered with WordPress.
      *
      * @param    string               $hook             The name of the WordPress action that is triggered.
@@ -93,6 +97,22 @@ class IQ_Instapago_Loader
     }
 
     /**
+     * A utility function that is used to register the shortcodes and hooks into a single
+     * collection.
+     */
+    private function add_s($shortcodes, $tag, $component, $callback)
+    {
+
+        $shortcodes[] = [
+            'tag' => $tag,
+            'component' => $component,
+            'callback' => $callback,
+        ];
+
+        return $shortcodes;
+    }
+
+    /**
      * Register the hooks with WordPress.
      *
      * @access   public
@@ -107,5 +127,10 @@ class IQ_Instapago_Loader
         foreach ($this->actions as $hook => $details) {
             add_action($hook, array($details['object'], $details['method_name']), $details['priority'], $details['accepted_args']);
         }
+
+        // foreach ($this->shortcodes as $shortcode) {
+        //     extract($shortcode, EXTR_OVERWRITE);
+        //     add_shortcode($tag, [$component, $callback]);
+        // }
     }
 }

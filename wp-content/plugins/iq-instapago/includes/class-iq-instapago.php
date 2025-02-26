@@ -128,6 +128,20 @@ class IQ_Instapago {
 
 		$plugin_admin = new IQ_Instapago_Admin($this->get_plugin_name(), $this->get_version());
 
+
+		$this->loader->add_action(
+            'before_woocommerce_init',
+            $plugin_admin,
+            'instapago_gateway_cart_checkout_blocks_compatibility'
+        );
+
+        $this->loader->add_action(
+            'woocommerce_blocks_loaded',
+            $plugin_admin,
+            'instapago_gateway_block_support'
+        );
+
+	
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
 		$this->loader->add_action('plugins_loaded', $plugin_admin, 'init_iq_instapago_bank_class');
@@ -154,6 +168,9 @@ class IQ_Instapago {
 	private function define_public_hooks()
 	{
 		$plugin_public = new IQ_Instapago_Public($this->get_plugin_name(), $this->get_version());
+
+		$plugin_public->enqueue_styles();
+		$plugin_public->enqueue_scripts();
 
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');

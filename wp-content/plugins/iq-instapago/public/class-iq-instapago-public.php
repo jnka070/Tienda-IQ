@@ -10,6 +10,7 @@
  * @subpackage IQ-Instapago/public
  * @author     IQ <contact@iqtsystems.com>
  */
+
 class IQ_Instapago_Public {
 
 	/**
@@ -50,6 +51,7 @@ class IQ_Instapago_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
+		
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -62,7 +64,7 @@ class IQ_Instapago_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/iq-instapago-public.css', array(), $this->version, 'all' );
 
 	}
@@ -86,6 +88,6 @@ class IQ_Instapago_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/iq-instapago-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/iq-instapago-public.js', ['jquery'], $this->version, false );
 	}
 }

@@ -1,13 +1,13 @@
 <div class="iq-instapago-form--container">
 	<div id="div_cliente">
-		<input type="text" id="iq-instapago_cchname" class="iq-instapago-form--input iq-instapago-form--name" name="card_holder_name" tabindex="1" title="<?php _e(__('Nombre y Apellido del Tarjetahabiente', 'iq-instapago')); ?>" placeholder="<?php _e(__('Nombre y Apellido del Tarjetahabiente', 'iq-instapago')); ?>" autocomplete="off" maxlength="25" pattern="[A-Za-zñ ]*" oninput="this.value = this.value.replace(/[^A-Za-zñ ]/g, '');">
-		<select id="iq-instapago_chid" class="iq-instapago-form--select iq-instapago-form--tipe" name="iq-instapago_chid" tabindex="2" title="<?php _e(__('Tipo de Identificación del Tarjetahabiente', 'iq-instapago')); ?>">
+		<input type="text" id="iq-instapago_cchname" class="iq-instapago-form--input iq-instapago-form--name" name="card_holder_name" tabindex="1" title="<?php _e(__('Nombre y Apellido', 'iq-instapago')); ?>" placeholder="<?php _e(__('Nombre y Apellido', 'iq-instapago')); ?>" autocomplete="off" maxlength="25" pattern="[A-Za-zñ ]*" oninput="this.value = this.value.replace(/[^A-Za-zñ ]/g, '');">
+		<select id="iq-instapago_chid" class="iq-instapago-form--select iq-instapago-form--tipe" name="iq-instapago_chid" tabindex="2" title="<?php _e(__('Tipo de Identificación', 'iq-instapago')); ?>">
 			<option value="V" selected>V</option>
 			<option value="E">E</option>
 			<option value="J">J</option>
 			<option value="G">G</option>
 		</select>
-		<input type="text" id="iq-instapago_cchnameid" class="iq-instapago-form--input iq-instapago-form--cchnameid" name="user_dni" tabindex="3" placeholder="<?php _e(__('Identificación del Tarjetahabiente', 'iq-instapago')); ?>" autocomplete="off" minlength="6" maxlength="8" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+		<input type="text" id="iq-instapago_cchnameid" class="iq-instapago-form--input iq-instapago-form--cchnameid" name="user_dni" tabindex="3" placeholder="<?php _e(__('Número de Identificación', 'iq-instapago')); ?>" autocomplete="off" minlength="6" maxlength="8" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 	</div>
 	<div id="div_tarjetas">
 		<input type="text" id="iq-instapago_ccnum" class="iq-instapago-form--input iq-instapago-form--tdc-number" name="valid_card_number" tabindex="4" placeholder="<?php _e(__('Número de tarjeta', 'iq-instapago')); ?>" autocomplete="off" maxlength="16" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');" title="<?php _e(__('Número de tarjeta', 'iq-instapago')); ?>">
@@ -16,8 +16,8 @@
 			<img src="<?php echo plugins_url('iq-instapago/public/img/iq-instapago-visa-mastercard.png'); ?>" class="iq-instapago-img" alt="Número de Tarjeta" style="margin-top: 10px;">
 		</div>
 	</div>
+	<p class="iq-instapago-form--txt-help"><?php _e(__('Fecha de vencimiento', 'iq-instapago')); ?></p>
 	<div id="div_venc">
-		<p class="iq-instapago-form--txt-help"><?php _e(__('Fecha de vencimiento', 'iq-instapago')); ?></p>
 		<select id="exp_month" class="iq-instapago-form--select iq-instapago-form--exp-month" name="exp_month" tabindex="6">
 			<option value="-1"><?php _e(__('Mes', 'iq-instapago')); ?></option>
 			<?php

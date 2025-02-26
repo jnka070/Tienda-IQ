@@ -1,5 +1,7 @@
 <?php
 
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
+
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -10,6 +12,8 @@
  * @subpackage IQ-Instapago/admin
  * @author     IQ <contact@iqtsystems.com>
  */
+
+ 
 class IQ_Instapago_Admin
 {
 
@@ -42,7 +46,6 @@ class IQ_Instapago_Admin
     {
         $this->plugin_name = $plugin_name;
         $this->version = $version;
-        error_log('Plugin Name: ' . $this->plugin_name);
     }
 
     /**
@@ -143,8 +146,8 @@ class IQ_Instapago_Admin
     public function add_iq_instapago_settings_page()
     {
         add_menu_page(
-            __('IQ Instapago Settings', 'iq-instapago'), // Título de la página
-            __('IQ Instapago ', 'iq-instapago'), // Texto del menú
+            __('Insta Web Settings', 'iq-instapago'), // Título de la página
+            __('Insta Web', 'iq-instapago'), // Texto del menú
             'manage_options', // Capacidad necesaria para acceder a la página
             'iq-instapago-settings', // Slug de la página
             [$this, 'show_iq_instapago_settings_page'], // Función para mostrar la página
@@ -235,5 +238,39 @@ class IQ_Instapago_Admin
     {
         // print("<pre>" . print_r($options, true) . "</pre>");
         echo '<input type="' . $args['type'] . '" id="' . $args['name'] . '" class="' . $args['name'] . '" name="' . $args['name'] . '" value="' . $args['value'] . '" />';
+    }
+
+    public function instapago_gateway_cart_checkout_blocks_compatibility(): void {
+
+        $path =  WP_PLUGIN_DIR.'/iq-instapago';
+        if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+            FeaturesUtil::declare_compatibility(
+                'cart_checkout_blocks',
+                $path,
+                true // true (compatible, default) or false (not compatible)
+            );
+
+            FeaturesUtil::declare_compatibility(
+                'custom_order_tables',
+                $path,
+                true
+            );
+        }
+
+    }
+
+    public function instapago_gateway_block_support(): void {
+
+        // here we're including our "gateway block support class"
+        require_once WP_PLUGIN_DIR.'/iq-instapago/support/class-wc-instapago-gateway-blocks-support.php';
+
+        // registering the PHP class we have just included
+        add_action(
+            'woocommerce_blocks_payment_method_type_registration',
+            function ( Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry $payment_method_registry ) {
+                $payment_method_registry->register( new WC_IQ_Instapago_Gateway_Blocks_Support );
+            }
+        );
+
     }
 }

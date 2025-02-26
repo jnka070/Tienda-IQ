@@ -28,9 +28,10 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 	{
 		global $woocommerce;
 		$this->id = 'iq-instapago';
-		$this->order_button_text = __('Pagar con IQ Instapago', 'iq-instapago');
-		$this->medthod_title = __('IQ Instapago', 'iq-instapago');
-		$this->method_description = sprintf(__('Es una solución tecnológica pensada para el mercado de comercio electrónico (eCommerce) en Venezuela y Latinoamérica, con la intención de ofrecer un producto de primera categoría, que permita a las personas y empresas apalancar sus capacidades de expansión, facilitando los mecanismos de pago para sus clientes, con una integración amigable a los sistemas que actualmente utilizan.', 'iq-instapago'));
+		$this->powerby = __('IQ Tecnhology Systems', 'iq-instapago');
+		$this->order_button_text = __('Pagar con Insta Web', 'iq-instapago');
+		$this->medthod_title = __('Insta Web', 'iq-instapago');
+		$this->method_description = sprintf(__('Nuestra plataforma te permite validar pagos vía Zelle, con la seguridad que deseas al recibir pagos a través de este canal. Al vincular la plataforma al correo de tu cuenta bancaria, r ecibirás correos de confirmación que se actualizarán automáticamente en nuestra plataforma de manera rápida y confiable.', 'iq-instapago'));
 		$this->has_fields = true;
 		// Load the settings.
 		$this->init_form_fields();
@@ -75,7 +76,7 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 	 */
 	public function get_icon()
 	{
-		$icon_html = '<img src="' . plugins_url('iq-instapago/public/img/iq-logo-black.webp') . '" alt="iq-instapago" style="width: auto; height: 40px;">';
+		$icon_html = '<img src="' . plugins_url('iq-instapago/public/img/iq-instapago-gateway.png') . '" alt="iq-instapago">';
 
 		return apply_filters('woocommerce_gateway_icon', $icon_html, $this->id);
 	}
@@ -83,10 +84,10 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 	public function payment_fields()
 	{
 		if ($this->debug === 'yes') {
-			echo '<p><strong>TEST MODE ENABLED</strong></p>';
+			echo '<p style="color:red"><strong>MODO TEST ACTIVADO</strong></p>';
 		}
 
-		echo '<p class="iq-instapago-form--txt-help">'. $this->description.'</p>';
+		echo '<p class="iq-instapago-form--txt-help">' . $this->description . '</p>';
 
 		include 'includes/payment-fields.php';
 	}
@@ -140,13 +141,13 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 				$logger->log('debug', print_r($result, true), $context);
 			}
 
-			update_post_meta($order_id, 'iq_instapago_voucher', $result['voucher']);
-			update_post_meta($order_id, 'iq_instapago_bank_ref', $result['reference']);
-			update_post_meta($order_id, 'iq_instapago_id_payment', $result['id_pago']);
-			update_post_meta($order_id, 'iq_instapago_bank_msg', $result['msg_banco']);
-			update_post_meta($order_id, 'iq_instapago_sequence', $result['sequence']);
-			update_post_meta($order_id, 'iq_instapago_approval', $result['approval']);
-			update_post_meta($order_id, 'iq_instapago_lote', $result['lote']);
+			$order->update_meta_data('iq_instapago_voucher', $result['voucher']);
+			$order->update_meta_data('iq_instapago_bank_ref', $result['reference']);
+			$order->update_meta_data('iq_instapago_id_payment', $result['id_pago']);
+			$order->update_meta_data('iq_instapago_bank_msg', $result['msg_banco']);
+			$order->update_meta_data('iq_instapago_sequence', $result['sequence']);
+			$order->update_meta_data('iq_instapago_approval', $result['approval']);
+			$order->update_meta_data('iq_instapago_lote', $result['lote']);
 
 			// Reduce stock levels
 			wc_reduce_stock_levels($order_id);
@@ -228,7 +229,7 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 				];
 				break;
 			default:
-				wc_add_notice(__('Error general.','iq_instapago'), 'error');
+				wc_add_notice(__('Error general.', 'iq_instapago'), 'error');
 				break;
 		}
 	}

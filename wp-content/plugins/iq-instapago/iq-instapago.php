@@ -8,9 +8,9 @@
  * @author     		  IQ <contact@iqtsystems.com>
  * 
  * @wordpress-plugin
- * Plugin Name:       IQ Instapago
+ * Plugin Name:       Insta Web
  * Plugin URI:        https://iqtsystems.com/
- * Description:       Plugin de pagos para IQ
+ * Description:       Plugin de pagos para Instapago
  * Version:           1.0.0
  * Author:            IQ
  * Author URI:        https://iqtsystems.com/

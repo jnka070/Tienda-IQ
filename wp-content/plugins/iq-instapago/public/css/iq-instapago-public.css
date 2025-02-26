@@ -1,68 +1,102 @@
 .iq-instapago-form--container {
-    margin: 0 auto;
+    max-width: 400px;
+    margin: 20px auto;
+    margin: 3 auto;
     box-sizing: border-box;
+    max-width: 500px;
+    padding: 20px 10px 40px 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-.iq-instapago-form--input {
-    width: 100%;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    box-sizing: border-box;
-}
+
+/* Estilos generales para los inputs y selects */
+.iq-instapago-form--input,
 .iq-instapago-form--select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     font-size: 16px;
     box-sizing: border-box;
     background-color: #fff;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+/* Efecto al hacer focus */
+.iq-instapago-form--input:focus,
+.iq-instapago-form--select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Organización de los selectores en una sola línea */
+#div_cliente, #div_tarjetas, #div_venc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .iq-instapago-form--tipe {
-    width: 20%;
+    width: 30%;
 }
+
 .iq-instapago-form--cchnameid {
-    width: 78%;
+    width: 65%;
 }
+
 .iq-instapago-form--tdc-number {
-    width: 59%;
+    width: 60%;
 }
+
 .iq-instapago-form--ccv {
-    width: 39%;
+    width: 35%;
 }
-.iq-instapago-form--exp-month {
+
+.iq-instapago-form--exp-month, .iq-instapago-form--exp-year {
     width: 48%;
 }
-.iq-instapago-form--exp-year {
-    width: 50%;
-}
+
+/* Mejoras en los textos de ayuda */
 .iq-instapago-form--txt-help {
-    font-size: 14px;
-    color: #555;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
 }
+
+/* Centrar imágenes y textos */
 .iq-instapago-img {
     max-width: 100%;
     height: auto;
-    margin: 0 auto;
-}
-.iq-instapago-text-center {
-    text-align: center;
-}
-@media (max-width: 768px) {
-    .iq-instapago-form--container {
-        max-width: 100%;
-    }
-    .iq-instapago-form--input,
-    .iq-instapago-form--select {
-        width: 100%;
-    }
+    display: block;
+    margin: 10px auto;
 }
 
-.iq-instapago-icon {
-    width: 5px !important;
-    height: 5px !important;
-    margin-right: 10px !important;
+.iq-instapago-text-center {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .iq-instapago-form--container {
+        width: 100%;
+        padding: 20px 10px 40px 10px;
+    }
+
+    #div_cliente, #div_tarjetas, #div_venc {
+        flex-direction: column;
+    }
+
+    .iq-instapago-form--tipe,
+    .iq-instapago-form--cchnameid,
+    .iq-instapago-form--tdc-number,
+    .iq-instapago-form--ccv,
+    .iq-instapago-form--exp-month,
+    .iq-instapago-form--exp-year {
+        width: 100%;
+    }
 }
