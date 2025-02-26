@@ -1,2 +1,3 @@
 2025-02-26T18:01:48+00:00 WARNING Empty patterns received from the PTK Pattern Store
 2025-02-26T18:04:25+00:00 INFO Payment gateway enabled: ""
+2025-02-26T20:18:25+00:00 DEBUG Se ha procesado un pago CONTEXT: {"code":"201","msg_banco":"Pago Aprobado","voucher":"","id_pago":"3f235bfa-a716-432e-927b-d7fd2084d774","reference":"160058","sequence":"160058","approval":"160058","lote":"160058"}
