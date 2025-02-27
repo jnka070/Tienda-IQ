@@ -14,6 +14,8 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 	private string $publicKeyId;
 	public string $debug;
 	public string $paymod;
+	public string $keyplugin;
+
 	private function load_dependencies()
 	{
 
@@ -74,7 +76,7 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 	 */
 	public function get_icon()
 	{
-		$icon_html = '<img src="' . plugins_url('iq-instapago/public/img/iq-instapago-gateway.png') . '" alt="iq-instapago">';
+		$icon_html = '<img src="' . plugins_url('iq-instapago/public/img/instapagoisotipodegrade-01.png') . '" alt="instapago" style="max-width: 28% !important;height: auto !important;max-height: none !important;>';
 
 		return apply_filters('woocommerce_gateway_icon', $icon_html, $this->id);
 	}
@@ -107,6 +109,7 @@ class WC_Gateway_IQ_Instapago_Commerce extends WC_Payment_Gateway
 		$fields = [
 			'KeyID'          => $this->keyId, //required
 			'PublicKeyId'    => $this->publicKeyId, //required
+			'keyPlugin' 	=> $this->keyplugin, //required
 			'Amount'         => $order->get_total(), //required
 			'Description'    => 'Generating payment for order #' . $order->get_order_number(), //required
 			'CardHolder'     => $cardHolder, //required

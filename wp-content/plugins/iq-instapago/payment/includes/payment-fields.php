@@ -12,9 +12,6 @@
 	<div id="div_tarjetas">
 		<input type="text" id="iq-instapago_ccnum" class="iq-instapago-form--input iq-instapago-form--tdc-number" name="valid_card_number" tabindex="4" placeholder="<?php _e(__('Número de tarjeta', 'iq-instapago')); ?>" autocomplete="off" maxlength="16" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');" title="<?php _e(__('Número de tarjeta', 'iq-instapago')); ?>">
 		<input type="password" id="iq-instapago_cvv" class="iq-instapago-form--input iq-instapago-form--ccv" name="cvc_code" tabindex="5" placeholder="<?php _e(__('Cód de seguridad', 'iq-instapago')); ?>" autocomplete="off" maxlength="3" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');" title="<?php _e(__('Cód de seguridad', 'iq-instapago')); ?>">
-		<div class=" tdc-logos">
-			<img src="<?php echo plugins_url('iq-instapago/public/img/iq-instapago-visa-mastercard.png'); ?>" class="iq-instapago-img" alt="Número de Tarjeta" style="margin-top: 10px;">
-		</div>
 	</div>
 	<p class="iq-instapago-form--txt-help"><?php _e(__('Fecha de vencimiento', 'iq-instapago')); ?></p>
 	<div id="div_venc">
@@ -59,11 +56,24 @@
 			?>
 		</select>
 	</div>
+	<div class="iq-instapago-visa-mastercard">
+		<img src="<?php echo plugins_url('iq-instapago/public/img/iq-instapago-visa-mastercard.png'); ?>" class="iq-visa-mastercard" alt="Número de Tarjeta">
+	</div>
+	<!-- <div class="tdc-logos">
+	</div> -->
 	<div class="iq-instapago-copy iq-instapago-text-center">
-		<p class="iq-instapago-form--txt-help">
-			<?php _e(__('Está transacción sera procesada de forma segura gracias a la plataforma de', 'iq-instapago')); ?>
+		<div class="iq-instapago-text-img">
+			<div class="iq-instapago-text">
+				<p class="iq-instapago-form--txt-help">
+					<?php _e(__('Esta transacción será procesada por Insta Web de Instapago', 'iq-instapago')); ?>
+				</p>
+			</div>
+			<div class="iq-instapago-img-container">
+				<img src="<?php echo plugins_url('iq-instapago/public/img/instapagoisotipodegrade-01.png'); ?>" class="iq-instapago-img" alt="Instapago">
+			</div>
+		</div>
+		<p><?php _e(__('Powered By')); ?>
+			<a href="https://iqtsystems.com/" target="_blank"><?php _e(__('IQ Technology Systems')) ?></a>
 		</p>
-		<p><?php _e(__('Powered By')); ?> <a href="https://iqtsystems.com/" target="_blank"><?php _e(__('IQ Tecnhology Systems')) ?></a></p>
-		<img src="<?php echo plugins_url('iq-instapago/public/img/iq-instapago.png'); ?>" class="iq-instapago-img" alt="Instapago Banesco">
 	</div>
 </div>

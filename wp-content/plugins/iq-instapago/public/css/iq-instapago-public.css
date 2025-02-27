@@ -19,9 +19,11 @@
     font-size: 16px;
     box-sizing: border-box;
     background-color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border-radius: 5px;
-    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition:
+        border 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
 }
 
 /* Efecto al hacer focus */
@@ -33,7 +35,9 @@
 }
 
 /* Organización de los selectores en una sola línea */
-#div_cliente, #div_tarjetas, #div_venc {
+#div_cliente,
+#div_tarjetas,
+#div_venc {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -55,7 +59,8 @@
     width: 35%;
 }
 
-.iq-instapago-form--exp-month, .iq-instapago-form--exp-year {
+.iq-instapago-form--exp-month,
+.iq-instapago-form--exp-year {
     width: 48%;
 }
 
@@ -64,6 +69,7 @@
     font-size: 18px;
     color: #333;
     font-weight: 500;
+    margin: 0;
 }
 
 /* Centrar imágenes y textos */
@@ -76,8 +82,45 @@
 
 .iq-instapago-text-center {
     text-align: center;
+    vertical-align: center;
     font-size: 14px;
     color: #666;
+}
+
+.iq-instapago-visa-mastercard {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 10px;
+}
+
+.iq-instapago-text-img {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0px 0px 0px;
+    align-items: center;
+}
+
+.iq-instapago-text {
+    flex: 1;
+    text-align: left;
+}
+
+.iq-instapago-img-container {
+    flex-shrink: 0;
+    max-width: 35%;
+}
+
+.iq-instapago-img {
+    height: auto !important;
+    max-height: none !important;
+}
+
+.iq-visa-mastercard {
+    max-width: 100px !important;
+    height: auto !important;
+    display: block !important;
 }
 
 /* Responsividad */
@@ -87,7 +130,9 @@
         padding: 20px 10px 40px 10px;
     }
 
-    #div_cliente, #div_tarjetas, #div_venc {
+    #div_cliente,
+    #div_tarjetas,
+    #div_venc {
         flex-direction: column;
     }
 
